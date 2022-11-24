@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bea30bbe-58f8-4c42-a47b-e8d8b73623c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../JAVA (1)/java/JDBCTD/JDBCTD.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JAVA (1)/java/Last Session Tp/HelloWorld/HelloWorld.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JAVA (1)/java/td/Compte_bancaire/Compte_bancaire.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JAVA (1)/java/td/Compte_bancaire/out/production/Compte_bancaire/Compte_bancaire/Compte_bancaire.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JAVA (1)/java/td/Polymorphisme/Polymorphisme.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/Pole_Digital_Academy_PDA__war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/Pole_Digital_Academy_PDA__war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UML/PDAAcademy .eddx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UML/usecase.eddx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Dao/DAOFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Dao/Dao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Dao/Implementations/UserDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Dao/Specs/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Dump/DumpGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Entities/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Entities/Candidate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Entities/Manager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Entities/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Repository/Implementation/UserRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Repository/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Repository/Specs/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Services/Implementation/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Services/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Servlet/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/example/poledigitalacademypda/Utilities/Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/webapp/index.jsp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/.." source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Hx9NMLic2oDeCQUqytsdhq1IFU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Youcode/Desktop/Visionary-Crofting",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="VisionaryCroftingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="visionaryCrofting" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.retro.visionarycrofting.VisionaryCroftingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bea30bbe-58f8-4c42-a47b-e8d8b73623c5" name="Changes" comment="" />
+      <created>1669215835706</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669215835706</updated>
+      <workItem from="1669215838973" duration="2317000" />
+      <workItem from="1669241192382" duration="3690000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

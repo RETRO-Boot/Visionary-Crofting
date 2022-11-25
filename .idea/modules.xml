@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/visionaryCrofting.iml" filepath="$PROJECT_DIR$/visionaryCrofting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../visionaryCrofting.iml" filepath="$PROJECT_DIR$/../visionaryCrofting.iml" />
     </modules>
   </component>
 </project>

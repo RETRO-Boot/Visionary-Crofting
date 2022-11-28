@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bea30bbe-58f8-4c42-a47b-e8d8b73623c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/CommandItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +124,7 @@
       <workItem from="1669362961228" duration="1192000" />
       <workItem from="1669372715948" duration="2571000" />
       <workItem from="1669622017911" duration="437000" />
+      <workItem from="1669622520330" duration="1339000" />
     </task>
     <servers />
   </component>

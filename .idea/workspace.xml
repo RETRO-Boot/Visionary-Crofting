@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bea30bbe-58f8-4c42-a47b-e8d8b73623c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/AppelOffre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Fournissour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Stock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/enumeration/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/enumeration/StatusAppel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/CommandItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/retro/visionarycrofting/VisionaryCroftingApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/retro/visionarycrofting/entities/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/retro/visionarycrofting/repositories/ClientRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/retro/visionarycrofting/repositories/implementation/ClientRepoImp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/retro/visionarycrofting/ressources/ClientRessource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/retro/visionarycrofting/services/ClientService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/retro/visionarycrofting/services/implementation/ClientServiceImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +48,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -74,24 +81,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/molaysaid/www/ideaProject/Visionary-Crofting/target/classes/com/retro/visionarycrofting/entities",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "c7a12e476d3caece1954a3d9925a321b"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/molaysaid/www/ideaProject/Visionary-Crofting/target/classes/com/retro/visionarycrofting/entities&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c7a12e476d3caece1954a3d9925a321b&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/target/classes/com/retro/visionarycrofting/entities" />
@@ -120,6 +128,8 @@
       <workItem from="1669241192382" duration="3690000" />
       <workItem from="1669362508731" duration="326000" />
       <workItem from="1669362961228" duration="1192000" />
+      <workItem from="1669372715948" duration="2571000" />
+      <workItem from="1669622017911" duration="437000" />
     </task>
     <servers />
   </component>
@@ -136,5 +146,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
   </component>
 </project>

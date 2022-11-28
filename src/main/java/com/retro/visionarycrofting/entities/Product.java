@@ -1,6 +1,7 @@
 package com.retro.visionarycrofting.entities;
 
 import com.retro.visionarycrofting.enumeration.Category;
+import jdk.jfr.Category;
 
 import javax.persistence.*;
 import java.io.Serializable;

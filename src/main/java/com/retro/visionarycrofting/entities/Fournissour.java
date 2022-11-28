@@ -13,7 +13,7 @@ public class Fournissour implements Serializable {
     private String email;
     private String password;
     private String phone;
-    @OneToMany(mappedBy = "fournissour")
+    @OneToMany(mappedBy = "fournissour", fetch = FetchType.LAZY)
     private List<AppelOffre> appelOffres;
 
     public Fournissour() {

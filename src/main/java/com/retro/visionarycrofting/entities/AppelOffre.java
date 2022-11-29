@@ -8,19 +8,26 @@ import java.io.Serializable;
 @Entity(name = "appelOffre")
 public class AppelOffre implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String ref;
-    private StatusAppel status;
-    private int quantity;
     private String refProduct;
+    private int quantity;
+    private StatusAppel status;
     @ManyToOne(fetch = FetchType.LAZY)
     private Stock stock;
     @ManyToOne(fetch = FetchType.LAZY)
-    private Fournissour fournissour;
+    private Fournisseur fournisseur;
 
     //
 
+
+    public AppelOffre(String refProduct, int quantity, Stock stock) {
+        this.refProduct = refProduct;
+        this.quantity = quantity;
+        this.stock = stock;
+    }
 
     public AppelOffre() {
     }
@@ -73,12 +80,12 @@ public class AppelOffre implements Serializable {
         this.stock = stock;
     }
 
-    public Fournissour getFournissour() {
-        return fournissour;
+    public Fournisseur getFournisseur() {
+        return fournisseur;
     }
 
-    public void setFournissour(Fournissour fournissour) {
-        this.fournissour = fournissour;
+    public void setFournisseur(Fournisseur fournisseur) {
+        this.fournisseur = fournisseur;
     }
 
     @Override

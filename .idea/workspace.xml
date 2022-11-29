@@ -46,22 +46,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -74,7 +58,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2Hx9NMLic2oDeCQUqytsdhq1IFU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,13 +74,20 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;/home/aslu/Desktop/projects/Visionary-Crofting&quot;,
+=======
+    &quot;last_opened_file_path&quot;: &quot;/home/molaysaid/www/ideaProject/Visionary-Crofting/target/classes/com/retro/visionarycrofting/entities&quot;,
+>>>>>>> 329240ced14493ffbc776602719c778c9ce7413f
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+<<<<<<< HEAD
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+=======
+>>>>>>> 329240ced14493ffbc776602719c778c9ce7413f
     &quot;spring.configuration.checksum&quot;: &quot;c7a12e476d3caece1954a3d9925a321b&quot;
   }
 }</component>
@@ -125,9 +118,19 @@
       <workItem from="1669215838973" duration="2317000" />
       <workItem from="1669241192382" duration="3690000" />
       <workItem from="1669362508731" duration="326000" />
+<<<<<<< HEAD
       <workItem from="1669362961228" duration="1192000" />
       <workItem from="1669372805764" duration="1067000" />
       <workItem from="1669638826039" duration="6701000" />
+=======
+      <workItem from="1669362961228" duration="3290000" />
+      <workItem from="1669367325041" duration="719000" />
+      <workItem from="1669368300041" duration="18000" />
+      <workItem from="1669622179313" duration="2352000" />
+      <workItem from="1669625007139" duration="19610000" />
+      <workItem from="1669672129252" duration="2904000" />
+      <workItem from="1669707374411" duration="339000" />
+>>>>>>> 329240ced14493ffbc776602719c778c9ce7413f
     </task>
     <servers />
   </component>
@@ -145,9 +148,14 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/.." />
-    </ignored-roots>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="com.fasterxml.jackson.databind.exc.InvalidDefinitionException" package="com.fasterxml.jackson.databind.exc" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

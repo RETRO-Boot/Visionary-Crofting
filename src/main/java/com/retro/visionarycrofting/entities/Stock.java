@@ -1,5 +1,7 @@
 package com.retro.visionarycrofting.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -14,7 +16,7 @@ public class Stock implements Serializable {
     private String email;
     private String password;
     private String phone;
-    @OneToMany(mappedBy = "stock")
+    @OneToMany(mappedBy = "stock", fetch = FetchType.LAZY)
     private List<Product> products;
 
     @OneToMany(mappedBy = "stock")
@@ -100,7 +102,6 @@ public class Stock implements Serializable {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
-                ", products=" + products +
                 ", appelOffres=" + appelOffres +
                 '}';
     }

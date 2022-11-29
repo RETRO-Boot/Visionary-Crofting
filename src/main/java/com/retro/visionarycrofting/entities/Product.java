@@ -1,5 +1,6 @@
 package com.retro.visionarycrofting.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.retro.visionarycrofting.enumeration.Category;
 
 import javax.persistence.*;
@@ -12,15 +13,14 @@ public class Product implements Serializable {
     private Long id;
     private String ref;
     private String name;
-    private String prix;
+    private long prix;
     private String description;
     private int quantity;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Stock stock;
+    @Enumerated(EnumType.STRING)
     private Category category;
-    @ManyToOne
-    private Stock stocks;
-
 
     public Product() {
     }
@@ -49,11 +49,11 @@ public class Product implements Serializable {
         this.name = name;
     }
 
-    public String getPrix() {
+    public long getPrix() {
         return prix;
     }
 
-    public void setPrix(String prix) {
+    public void setPrix(long prix) {
         this.prix = prix;
     }
 
@@ -89,14 +89,6 @@ public class Product implements Serializable {
         this.category = category;
     }
 
-    public Stock getStocks() {
-        return stocks;
-    }
-
-    public void setStocks(Stock stocks) {
-        this.stocks = stocks;
-    }
-
     @Override
     public String toString() {
         return "Product{" +
@@ -108,7 +100,6 @@ public class Product implements Serializable {
                 ", quantity=" + quantity +
                 ", stock=" + stock +
                 ", category=" + category +
-                ", stocks=" + stocks +
                 '}';
     }
 }

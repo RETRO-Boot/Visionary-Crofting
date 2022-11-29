@@ -14,9 +14,9 @@ public class AppelOffre implements Serializable {
     private StatusAppel status;
     private int quantity;
     private String refProduct;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Stock stock;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Fournissour fournissour;
 
     //

@@ -1,8 +1,10 @@
-package com.retro.visionarycrofting.services;
+package com.retro.visionarycrofting.services.implementation;
 
 import com.retro.visionarycrofting.entities.Product;
 import com.retro.visionarycrofting.entities.Stock;
 import com.retro.visionarycrofting.repositories.StockDao;
+import com.retro.visionarycrofting.services.ProductService;
+import com.retro.visionarycrofting.services.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class StockServiceImpl implements StockService{
+public class StockServiceImpl implements StockService {
     @Autowired
     StockDao stockDao;
     @Autowired

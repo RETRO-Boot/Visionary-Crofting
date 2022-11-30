@@ -1,10 +1,7 @@
 package com.retro.visionarycrofting.ressources;
 
 import com.retro.visionarycrofting.entities.Stock;
-import com.retro.visionarycrofting.exception.ApiRequestException;
 import com.retro.visionarycrofting.services.StockService;
-import com.retro.visionarycrofting.services.StockServiceImpl;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

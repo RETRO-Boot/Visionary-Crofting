@@ -1,9 +1,10 @@
-package com.retro.visionarycrofting.services;
+package com.retro.visionarycrofting.services.implementation;
 
 import com.retro.visionarycrofting.entities.Product;
 import com.retro.visionarycrofting.entities.Stock;
 import com.retro.visionarycrofting.enumeration.Category;
 import com.retro.visionarycrofting.repositories.ProductDao;
+import com.retro.visionarycrofting.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
     @Autowired
     ProductDao productDao;
     @Autowired

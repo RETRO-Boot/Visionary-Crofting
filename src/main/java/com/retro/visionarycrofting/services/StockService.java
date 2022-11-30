@@ -1,5 +1,6 @@
 package com.retro.visionarycrofting.services;
 
+import com.retro.visionarycrofting.entities.Product;
 import com.retro.visionarycrofting.entities.Stock;
 import com.retro.visionarycrofting.repositories.StockDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import java.util.List;
 public class StockService {
     @Autowired
     StockDao stockDao;
+    @Autowired
+    ProductService productService;
 
     public List<Stock> findAllByAddress(String address) {
         return stockDao.findAllByAddress(address);
@@ -41,14 +44,17 @@ public class StockService {
 
     @Deprecated
     public Stock getOne(Long aLong) {
-        System.out.println(aLong);
         return stockDao.getOne(aLong);
     }
 
-    public Stock save(Stock stock) {
-        if (this.findByName(stock.getName()) != null) return null;
-        if (this.findByEmail(stock.getEmail()) != null) return null;
-        return stockDao.save(stock);
+    public Stock save(Stock s) {
+        if (this.findByName(s.getName()) != null) return null;
+        if (this.findByEmail(s.getEmail()) != null) return null;
+        Stock stock = stockDao.save(s);
+        for (Product product: s.getProducts()) {
+            productService.save(product, stock.getName());
+        }
+        return stock;
     }
     public Stock update(Stock stock) {
         if (this.findByName(stock.getName()) == null) return null;

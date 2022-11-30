@@ -1,7 +1,9 @@
 package com.retro.visionarycrofting.ressources;
 
 import com.retro.visionarycrofting.entities.Stock;
+import com.retro.visionarycrofting.exception.ApiRequestException;
 import com.retro.visionarycrofting.services.StockService;
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +28,6 @@ public class StockWs {
 
     @GetMapping("/email/{email}")
     public Stock findByEmail(@PathVariable String email) {
-        System.out.println(email);
         return stockService.findByEmail(email);
     }
 
@@ -42,12 +43,12 @@ public class StockWs {
 
     @GetMapping("/")
     public List<Stock> findAll() {
+        //throw new ApiRequestException("Can't found Stock !!");
         return stockService.findAll();
     }
 
     @GetMapping("/id/{id}")
     public Stock getOne(@PathVariable Long id) {
-        System.out.println(id);
         return stockService.getOne(id);
     }
 

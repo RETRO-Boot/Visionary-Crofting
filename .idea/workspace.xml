@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bea30bbe-58f8-4c42-a47b-e8d8b73623c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/exception/ApiException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/exception/ApiExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/exception/ApiRequestException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/ressources/StockWs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/ressources/StockWs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/services/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/services/StockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/services/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +115,7 @@
       <workItem from="1669672129252" duration="2904000" />
       <workItem from="1669707374411" duration="339000" />
       <workItem from="1669708708989" duration="13657000" />
+      <workItem from="1669799607643" duration="504000" />
     </task>
     <servers />
   </component>

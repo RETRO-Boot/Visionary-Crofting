@@ -35,11 +35,11 @@ public class CallForProposalServiceImp implements CallForProposalService {
     @Override
     public CallForProposal findByRef(String ref){return callForProposalRepository.findByRef(ref);}
     @Override
-    public CallForProposal addNewCallForProposal(String productReference, int quantity, Long stock){
-        Stock stockToSet = stockService.getOne(stock);
-        CallForProposal callForProposal = new CallForProposal(productReference, quantity, stockToSet);
-        callForProposal.setStatus(CallForProposalStatus.Open);
-        return callForProposalRepository.save(callForProposal);
+    public CallForProposal addNewCallForProposal(CallForProposal callForProposal){
+        Stock stockToSet = stockService.findById(callForProposal.getStock().getId());
+        CallForProposal callForProposalToSave = new CallForProposal(callForProposal.getRefProduct(), callForProposal.getQuantity(), stockToSet);
+        callForProposalToSave.setStatus(CallForProposalStatus.Open);
+        return callForProposalRepository.save(callForProposalToSave);
     }
     @Override
     public void deleteCallForProposal(String ref){

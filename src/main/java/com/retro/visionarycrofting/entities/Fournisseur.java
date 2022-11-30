@@ -14,7 +14,7 @@ public class Fournisseur implements Serializable {
     private String password;
     private String phone;
     @OneToMany(mappedBy = "fournisseur", fetch = FetchType.LAZY)
-    private List<AppelOffre> appelOffres;
+    private List<CallForProposal> callForProposals;
 
     public Fournisseur() {
     }
@@ -59,12 +59,12 @@ public class Fournisseur implements Serializable {
         this.phone = phone;
     }
 
-    public List<AppelOffre> getAppelOffres() {
-        return appelOffres;
+    public List<CallForProposal> getAppelOffres() {
+        return callForProposals;
     }
 
-    public void setAppelOffres(List<AppelOffre> appelOffres) {
-        this.appelOffres = appelOffres;
+    public void setAppelOffres(List<CallForProposal> callForProposals) {
+        this.callForProposals = callForProposals;
     }
 
     @Override
@@ -75,7 +75,7 @@ public class Fournisseur implements Serializable {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
-                ", appelOffres=" + appelOffres +
+                ", callForProposals=" + callForProposals +
                 '}';
     }
 }

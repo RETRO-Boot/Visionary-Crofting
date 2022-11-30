@@ -14,6 +14,6 @@ public interface ClientService  {
 
     void  deleteById(Long id);
 
-    void updateClient(long id , String userName , String email , String Tel , String password);
+    Client updateClient(Client client , long id);
 
 }

@@ -22,19 +22,16 @@ public class ClientRessource {
     public List<Client>  getClient(){ return clientService.getClient(); }
 
     @PostMapping
-    public  Client addClient(Client client){return  clientService.addClient(client);}
+    public  Client addClient(@RequestBody Client client){return  clientService.addClient(client);}
 
-    @DeleteMapping(path = "Client")
-    public void  deleteById(@PathVariable("Client") long id){ clientService.deleteById(id);}
+    @DeleteMapping(path = "Client/{id}")
+    public String  deleteById(@PathVariable("id") long id){
+        clientService.deleteById(id);
+        return "Deleted Successfully";
+    }
 
-    @PutMapping(path = "{clientId}")
-    public void  updateClient(
-           @PathVariable("clientId") long id ,
-           @RequestParam(required = false) String userName ,
-           @RequestParam(required = false) String email,
-           @RequestParam(required = false) String Tel,
-           @RequestParam(required = false) String  password
-    ){
-        clientService.updateClient( id , userName , email , Tel , password);
+    @PutMapping("/Clients/{id}")
+    public Client updateClient(@RequestBody Client client , long id){
+       return  clientService.updateClient(client,id);
     };
 }

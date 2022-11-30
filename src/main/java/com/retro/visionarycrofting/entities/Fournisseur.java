@@ -14,7 +14,7 @@ public class Fournisseur implements Serializable {
     private String password;
     private String phone;
     @OneToMany(mappedBy = "fournisseur", fetch = FetchType.LAZY)
-    private List<AppelOffre> appelOffres;
+    private List<CallForProposal> appelOffres;
 
     public Fournisseur() {
     }
@@ -59,11 +59,11 @@ public class Fournisseur implements Serializable {
         this.phone = phone;
     }
 
-    public List<AppelOffre> getAppelOffres() {
+    public List<CallForProposal> getAppelOffres() {
         return appelOffres;
     }
 
-    public void setAppelOffres(List<AppelOffre> appelOffres) {
+    public void setAppelOffres(List<CallForProposal> appelOffres) {
         this.appelOffres = appelOffres;
     }
 

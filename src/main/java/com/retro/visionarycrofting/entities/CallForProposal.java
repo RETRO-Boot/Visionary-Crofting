@@ -1,20 +1,20 @@
 package com.retro.visionarycrofting.entities;
 
-import com.retro.visionarycrofting.enumeration.StatusAppel;
+import com.retro.visionarycrofting.enumeration.CallForProposalStatus;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity(name = "appelOffre")
-public class AppelOffre implements Serializable {
+public class CallForProposal implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String ref;
     private String refProduct;
-    private int quantity;
-    private StatusAppel status;
+    private Integer quantity;
+    private CallForProposalStatus status;
     @ManyToOne(fetch = FetchType.LAZY)
     private Stock stock;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -23,13 +23,13 @@ public class AppelOffre implements Serializable {
     //
 
 
-    public AppelOffre(String refProduct, int quantity, Stock stock) {
+    public CallForProposal(String refProduct, int quantity, Stock stock) {
         this.refProduct = refProduct;
         this.quantity = quantity;
         this.stock = stock;
     }
 
-    public AppelOffre() {
+    public CallForProposal() {
     }
 
     public Long getId() {
@@ -48,15 +48,15 @@ public class AppelOffre implements Serializable {
         this.ref = ref;
     }
 
-    public StatusAppel getStatus() {
+    public CallForProposalStatus getStatus() {
         return status;
     }
 
-    public void setStatus(StatusAppel status) {
+    public void setStatus(CallForProposalStatus status) {
         this.status = status;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
@@ -90,7 +90,7 @@ public class AppelOffre implements Serializable {
 
     @Override
     public String toString() {
-        return "AppelOffre{" +
+        return "CallForProposal{" +
                 "id=" + id +
                 ", ref='" + ref + '\'' +
                 ", status=" + status +

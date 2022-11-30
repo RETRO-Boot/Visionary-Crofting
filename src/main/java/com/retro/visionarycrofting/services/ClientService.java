@@ -19,4 +19,6 @@ public interface ClientService  {
 
     Optional<Client> findById(long id);
 
+    Optional<Client>  findClientByEmail(String email);
+
 }

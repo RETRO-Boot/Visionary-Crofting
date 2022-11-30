@@ -1,13 +1,10 @@
 package com.retro.visionarycrofting.services.implementation;
 
-import com.retro.visionarycrofting.entities.Client;
 import com.retro.visionarycrofting.entities.Command;
 import com.retro.visionarycrofting.repositories.CommandRepository;
 import com.retro.visionarycrofting.services.CommandService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,8 +13,10 @@ public class CommandServiceImp implements CommandService {
 
     private final CommandRepository commandRepository ;
 
-    @Autowired
-    public CommandServiceImp(CommandRepository commandRepository) {this.commandRepository = commandRepository;}
+    public CommandServiceImp(CommandRepository commandRepository) {
+        this.commandRepository = commandRepository;
+    }
+
 
     @Override
     public List<Command> getCommands() {
@@ -55,4 +54,7 @@ public class CommandServiceImp implements CommandService {
 
         return commandRepository.save(Cmd);
     }
+
+
+
 }

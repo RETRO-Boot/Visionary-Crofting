@@ -3,8 +3,8 @@ package com.retro.visionarycrofting.services;
 import com.retro.visionarycrofting.entities.Command;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
+
 
 @Service
 public interface CommandService {
@@ -16,5 +16,6 @@ public interface CommandService {
     void  deleteById(long id);
 
     Command  updateCommend(Command command , long id);
+
 
 }

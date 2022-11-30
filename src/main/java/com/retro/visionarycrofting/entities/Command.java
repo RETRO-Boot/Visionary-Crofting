@@ -1,11 +1,13 @@
 package com.retro.visionarycrofting.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Entity(name = "Command")
 public class Command implements Serializable {
@@ -65,6 +67,7 @@ public class Command implements Serializable {
                 '}';
     }
 
+    @JsonIgnore
     public List<CommandItem> getCommandItems() {
         return commandItems;
     }

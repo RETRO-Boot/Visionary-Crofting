@@ -37,6 +37,12 @@ public class ClientRessource {
 
     @GetMapping(path = "Client/{id}")
     public Optional<Client> findById(@PathVariable long id){
-        return clientService.findById(id) ;
+        return clientService.findById(id);
     }
+
+    @GetMapping(path = "client/{email}")
+    public  Optional<Client>  findClientByEmail(@PathVariable String email){
+        return  clientService.findClientByEmail(email);
+    }
+
 }

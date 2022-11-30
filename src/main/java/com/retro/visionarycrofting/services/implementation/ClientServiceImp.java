@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Objects;
 
-import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClientServiceImp implements ClientService {
@@ -61,6 +61,16 @@ public class ClientServiceImp implements ClientService {
         }
 
         return clientRepository.save(cli);
+    }
+
+    @Override
+    public Optional<Client> findById(long id) {
+        return clientRepository.findById(id);
+    }
+
+    @Override
+    public Optional<Client> findClientByEmail(String email) {
+        return clientRepository.findClientByEmail(email);
     }
 
 

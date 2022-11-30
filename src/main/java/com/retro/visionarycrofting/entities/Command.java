@@ -1,11 +1,14 @@
 package com.retro.visionarycrofting.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 @Entity(name = "Command")
 public class Command implements Serializable {
@@ -14,10 +17,23 @@ public class Command implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id ;
     private String ref ;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private Date date ;
     private Double prixTotal ;
 
-    public Command(){};
+  @OneToMany(mappedBy = "command", orphanRemoval = true)
+  private List<CommandItem> commandItems = new ArrayList<>();
+
+
+  public List<CommandItem> getCommandItems() {
+    return commandItems;
+  }
+
+  public void setCommandItems(List<CommandItem> commandItems) {
+    this.commandItems = commandItems;
+  }
+
+  public Command(){};
 
     public long getId() {
         return id;
@@ -58,6 +74,16 @@ public class Command implements Serializable {
                 ", ref='" + ref + '\'' +
                 ", date=" + date +
                 ", prixTotal=" + prixTotal +
+                ", commandItems=" + commandItems +
                 '}';
     }
+
+//    @JsonIgnore
+//    public List<CommandItem> getCommandItems() {
+//        return commandItems;
+//    }
+//
+//    public void setCommandItems(List<CommandItem> commandItems) {
+//        this.commandItems = commandItems;
+//    }
 }

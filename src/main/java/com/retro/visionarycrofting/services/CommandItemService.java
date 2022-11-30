@@ -15,4 +15,6 @@ public interface CommandItemService {
   void deleteById(Long id);
 
   void updateCommandItem(Long commandItemId, String commandItemRef, int commandItemQuantity, double price);
+
+  void checkQuantity(CommandItem commandItem, int quantity);
 }

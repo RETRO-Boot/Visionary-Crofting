@@ -2,7 +2,9 @@ package com.retro.visionarycrofting.ressources;
 
 
 import com.retro.visionarycrofting.entities.CommandItem;
+import com.retro.visionarycrofting.entities.Product;
 import com.retro.visionarycrofting.services.CommandItemService;
+import com.retro.visionarycrofting.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,10 +14,12 @@ import java.util.List;
 @RequestMapping(path = "api/v1/command-items")
 public class CommandItemResource {
   private final CommandItemService commandItemService;
+  private final ProductService productService;
 
   @Autowired
-  public CommandItemResource(CommandItemService commandItemService) {
+  public CommandItemResource(CommandItemService commandItemService, ProductService productService) {
     this.commandItemService = commandItemService;
+    this.productService = productService;
   }
 
   @GetMapping

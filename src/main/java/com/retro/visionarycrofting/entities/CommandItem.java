@@ -1,5 +1,7 @@
 package com.retro.visionarycrofting.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -25,6 +27,19 @@ public class CommandItem implements Serializable {
   @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "product_id", nullable = true)
   private Product product;
+
+  @ManyToOne
+  @JoinColumn(name = "command_id")
+  private Command command;
+
+  @JsonIgnore
+  public Command getCommand() {
+    return command;
+  }
+
+  public void setCommand(Command command) {
+    this.command = command;
+  }
 
   public Product getProduct() {
     return product;

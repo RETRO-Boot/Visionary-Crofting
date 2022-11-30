@@ -8,7 +8,6 @@ import com.retro.visionarycrofting.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
@@ -39,6 +38,11 @@ public class CommandItemServiceImp implements CommandItemService {
     }
     Product product = productService.findByRef(commandItem.getProduct().getRef());
     if (product == null) throw new IllegalArgumentException("no product with the provided reference");
+
+    // TODO check the product has enough quantity
+    this.checkQuantity(commandItem, commandItem.getQuantite());
+
+
     product.setQuantity(product.getQuantity() - commandItem.getQuantite());
     commandItem.setProduct(product);
 
@@ -78,6 +82,14 @@ public class CommandItemServiceImp implements CommandItemService {
     }
     if (Double.valueOf(prix) != null){
       commandItemToUpdate.setPrix(prix);
+    }
+  }
+
+  // can be moved to the model  
+  @Override
+  public void checkQuantity(CommandItem commandItem, int quantity) {
+    if (commandItem.getQuantite() < quantity){
+      throw new IllegalStateException("our stock is emty");
     }
   }
 }

@@ -1,7 +1,7 @@
 package com.retro.visionarycrofting.ressources;
 
 import com.retro.visionarycrofting.entities.Product;
-import com.retro.visionarycrofting.services.ProductServiceImpl;
+import com.retro.visionarycrofting.services.implementation.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,9 +1,8 @@
 package com.retro.visionarycrofting.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity(name = "CommandItem")
@@ -15,6 +14,9 @@ public class CommandItem implements Serializable {
     private  String ref ;
     private  int quantite ;
     private  double prix ;
+    @ManyToOne
+    @JsonIgnore
+    private Command command;
 
     public CommandItem(){}
 
@@ -57,6 +59,15 @@ public class CommandItem implements Serializable {
                 ", ref='" + ref + '\'' +
                 ", quantite=" + quantite +
                 ", prix=" + prix +
+                ", command=" + command +
                 '}';
+    }
+
+    public Command getCommand() {
+        return command;
+    }
+
+    public void setCommand(Command command) {
+        this.command = command;
     }
 }

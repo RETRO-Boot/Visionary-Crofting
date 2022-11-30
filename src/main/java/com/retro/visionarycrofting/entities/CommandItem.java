@@ -63,6 +63,8 @@ public class CommandItem implements Serializable {
                 '}';
     }
 
+
+    @JsonIgnore
     public Command getCommand() {
         return command;
     }

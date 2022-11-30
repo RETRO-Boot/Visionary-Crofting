@@ -1,7 +1,5 @@
 package com.retro.visionarycrofting.entities;
 
-import org.aspectj.weaver.ast.Call;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -15,7 +13,7 @@ public class Fournissour implements Serializable {
     private String email;
     private String password;
     private String phone;
-//    @OneToMany(mappedBy = "fournissour", fetch = FetchType.LAZY)
+//    @OneToMany(mappedBy = "", fetch = FetchType.LAZY)
 //    private List<CallForProposal> appelOffres;
 
     public Fournissour() {

@@ -1,12 +1,13 @@
 package com.retro.visionarycrofting.services.implementation;
 
 import com.retro.visionarycrofting.entities.CommandItem;
+import com.retro.visionarycrofting.entities.Product;
 import com.retro.visionarycrofting.repositories.CommandItemRepository;
 import com.retro.visionarycrofting.services.CommandItemService;
+import com.retro.visionarycrofting.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
@@ -16,10 +17,12 @@ import java.util.Optional;
 public class CommandItemServiceImp implements CommandItemService {
 
   private final CommandItemRepository commandItemRepository;
+  private final ProductService productService;
 
   @Autowired
-  public CommandItemServiceImp(CommandItemRepository commandItemRepository) {
+  public CommandItemServiceImp(CommandItemRepository commandItemRepository, ProductService productService) {
     this.commandItemRepository = commandItemRepository;
+    this.productService = productService;
   }
 
   @Override
@@ -33,6 +36,19 @@ public class CommandItemServiceImp implements CommandItemService {
     if (commandItemOptional.isPresent()){
       throw new IllegalStateException("Command Item with this reference already exist");
     }
+    Product product = productService.findByRef(commandItem.getProduct().getRef());
+    if (product == null) throw new IllegalArgumentException("no product with the provided reference");
+
+    // TODO check the product has enough quantity
+    this.checkQuantity(commandItem, commandItem.getQuantite());
+
+
+    product.setQuantity(product.getQuantity() - commandItem.getQuantite());
+    commandItem.setProduct(product);
+
+    // calculate price
+    commandItem.setPrix(product.getPrix() * commandItem.getQuantite());
+
     return commandItemRepository.save(commandItem);
   }
 
@@ -59,11 +75,21 @@ public class CommandItemServiceImp implements CommandItemService {
       commandItemToUpdate.setRef(commandItemRef);
     }
 
+
+
     if (Integer.valueOf(commandItemQuantity) != null){
       commandItemToUpdate.setQuantite(commandItemQuantity);
     }
     if (Double.valueOf(prix) != null){
       commandItemToUpdate.setPrix(prix);
+    }
+  }
+
+  // can be moved to the model  
+  @Override
+  public void checkQuantity(CommandItem commandItem, int quantity) {
+    if (commandItem.getQuantite() < quantity){
+      throw new IllegalStateException("our stock is emty");
     }
   }
 }

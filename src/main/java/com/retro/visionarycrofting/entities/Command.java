@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -19,10 +20,20 @@ public class Command implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private Date date ;
     private Double prixTotal ;
-    @OneToMany(mappedBy = "command")
-    private List<CommandItem> commandItems;
 
-    public Command(){};
+  @OneToMany(mappedBy = "command", orphanRemoval = true)
+  private List<CommandItem> commandItems = new ArrayList<>();
+
+
+  public List<CommandItem> getCommandItems() {
+    return commandItems;
+  }
+
+  public void setCommandItems(List<CommandItem> commandItems) {
+    this.commandItems = commandItems;
+  }
+
+  public Command(){};
 
     public long getId() {
         return id;
@@ -67,12 +78,12 @@ public class Command implements Serializable {
                 '}';
     }
 
-    @JsonIgnore
-    public List<CommandItem> getCommandItems() {
-        return commandItems;
-    }
-
-    public void setCommandItems(List<CommandItem> commandItems) {
-        this.commandItems = commandItems;
-    }
+//    @JsonIgnore
+//    public List<CommandItem> getCommandItems() {
+//        return commandItems;
+//    }
+//
+//    public void setCommandItems(List<CommandItem> commandItems) {
+//        this.commandItems = commandItems;
+//    }
 }

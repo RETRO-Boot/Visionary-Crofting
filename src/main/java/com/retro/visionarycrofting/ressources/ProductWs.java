@@ -1,7 +1,8 @@
 package com.retro.visionarycrofting.ressources;
 
 import com.retro.visionarycrofting.entities.Product;
-import com.retro.visionarycrofting.services.implementation.ProductServiceImpl;
+import com.retro.visionarycrofting.enumeration.Category;
+import com.retro.visionarycrofting.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @RequestMapping("/${api.endpoint}/product")
 public class ProductWs {
     @Autowired
-    ProductServiceImpl productService;
+    ProductService productService;
 
     @GetMapping("/quantity/{quantity}")
     public List<Product> findAllByQuantityGreaterThan(@PathVariable int quantity) {

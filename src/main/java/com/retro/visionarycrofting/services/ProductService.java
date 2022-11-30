@@ -1,34 +1,102 @@
 package com.retro.visionarycrofting.services;
 
 import com.retro.visionarycrofting.entities.Product;
+import com.retro.visionarycrofting.entities.Stock;
+import com.retro.visionarycrofting.enumeration.Category;
+import com.retro.visionarycrofting.repositories.ProductDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.yaml.snakeyaml.util.EnumUtils;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
-public interface ProductService {
+@Service
+public class ProductService {
+    @Autowired
+    ProductDao productDao;
+    @Autowired
+    StockService stockService;
 
-    public List<Product> findAllByQuantityGreaterThan(int quantity);
+    public List<Product> findAllByQuantityGreaterThan(int quantity) {
+        return productDao.findAllByQuantityGreaterThanEqual(quantity);
+    }
 
-    public List<Product> findAllByPrixGreaterThan(long prix);
+    public List<Product> findAllByPrixGreaterThan(long prix) {
+        return productDao.findAllByPrixGreaterThanEqual(prix);
+    }
 
-    public List<Product> findAllByStockName(String name);
+    public List<Product> findAllByStockName(String name) {
+        return productDao.findAllByStockName(name);
+    }
 
-    public Product findByRef(String ref);
+    public Product findByRef(String ref) {
+        return productDao.findByRef(ref);
+    }
 
-    public List<Product> findAllByName(String name);
+    public List<Product> findAllByName(String name) {
+        return productDao.findAllByName(name);
+    }
 
-    public List<Product> findAllByCategory(String cat);
+    public List<Product> findAllByCategory(String cat) {
+        try {
+            Category catEnum = Category.valueOf(String.valueOf(cat));
+            return productDao.findAllByCategory(catEnum);
+        } catch (IllegalArgumentException ex) {
+            return new ArrayList<>();
+        }
+    }
 
-    public List<Product> findAllByCategoryAndPrixGreaterThan(String cat, long prix);
+    public List<Product> findAllByCategoryAndPrixGreaterThan(String cat, long prix) {
+        try {
+            Category catEnum = Category.valueOf(String.valueOf(cat));
+            return productDao.findAllByCategoryAndPrixGreaterThanEqual(catEnum, prix);
+        } catch (IllegalArgumentException ex) {
+            return new ArrayList<>();
+        }
+    }
 
-    public List<Product> findAllByCategoryAndQuantityGreaterThan(String cat, int quantity);
+    public List<Product> findAllByCategoryAndQuantityGreaterThan(String cat, int quantity) {
+        try {
+            Category catEnum = Category.valueOf(String.valueOf(cat));
+            return productDao.findAllByCategoryAndQuantityGreaterThanEqual(catEnum, quantity);
+        } catch (IllegalArgumentException ex) {
+            return new ArrayList<>();
+        }
+    }
 
-    public int deleteByRef(String ref);
+    @Transactional
+    public int deleteByRef(String ref) {
+        return productDao.deleteByRef(ref);
+    }
 
-    public List<Product> findAll();
+    public List<Product> findAll() {
+        return productDao.findAll();
+    }
 
-    public Product getOne(Long aLong);
+    @Deprecated
+    public Product getOne(Long aLong) {
+        return productDao.getOne(aLong);
+    }
 
-    public Product save(Product product, String name);
+    public Product save(Product product, String name) {
+        Stock stock = this.stockService.findByName(name);
+        if (stock == null) {
+            System.out.println("Stock not found");
+            return null;
+        }
+        product.setStock(stock);
+        if(this.findByRef(product.getRef()) != null) {
+            System.out.println("Ref already exist");
+            return null;
+        }
+        return productDao.save(product);
+    }
 
-    public Product update(Product product);
+    public Product update(Product product) {
+        if(this.findByRef(product.getRef()) == null) return null;
+        if(this.getOne(product.getId()) == null) return null;
+        return productDao.save(product);
+    }
 }

@@ -26,6 +26,7 @@ public class StockWs {
 
     @GetMapping("/email/{email}")
     public Stock findByEmail(@PathVariable String email) {
+        System.out.println(email);
         return stockService.findByEmail(email);
     }
 
@@ -41,12 +42,12 @@ public class StockWs {
 
     @GetMapping("/")
     public List<Stock> findAll() {
-        //throw new ApiRequestException("Can't found Stock !!");
         return stockService.findAll();
     }
 
     @GetMapping("/id/{id}")
     public Stock getOne(@PathVariable Long id) {
+        System.out.println(id);
         return stockService.getOne(id);
     }
 

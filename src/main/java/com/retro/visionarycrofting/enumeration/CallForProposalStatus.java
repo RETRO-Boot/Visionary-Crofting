@@ -1,5 +1,5 @@
 package com.retro.visionarycrofting.enumeration;
 
-public enum StatusAppel {
+public enum CallForProposalStatus {
     Open, Confirmed, Close
 }

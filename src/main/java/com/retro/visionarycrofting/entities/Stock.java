@@ -1,7 +1,5 @@
 package com.retro.visionarycrofting.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -20,7 +18,7 @@ public class Stock implements Serializable {
     private List<Product> products;
 
     @OneToMany(mappedBy = "stock")
-    private List<AppelOffre> appelOffres;
+    private List<CallForProposal> callForProposals;
 
 
     //
@@ -85,12 +83,12 @@ public class Stock implements Serializable {
         this.products = products;
     }
 
-    public List<AppelOffre> getAppelOffres() {
-        return appelOffres;
+    public List<CallForProposal> getAppelOffres() {
+        return callForProposals;
     }
 
-    public void setAppelOffres(List<AppelOffre> appelOffres) {
-        this.appelOffres = appelOffres;
+    public void setAppelOffres(List<CallForProposal> callForProposals) {
+        this.callForProposals = callForProposals;
     }
 
     @Override
@@ -102,7 +100,7 @@ public class Stock implements Serializable {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
-                ", appelOffres=" + appelOffres +
+                ", callForProposals=" + callForProposals +
                 '}';
     }
 }

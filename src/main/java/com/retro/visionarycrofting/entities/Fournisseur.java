@@ -4,27 +4,19 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-@Entity(name = "stock")
-public class Stock implements Serializable {
+@Entity(name = "fournisseur")
+public class Fournisseur implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String address;
     private String email;
     private String password;
     private String phone;
-    @OneToMany(mappedBy = "stock", fetch = FetchType.LAZY)
-    private List<Product> products;
+    @OneToMany(mappedBy = "fournisseur", fetch = FetchType.LAZY)
+    private List<AppelOffre> appelOffres;
 
-    @OneToMany(mappedBy = "stock")
-    private List<CallForProposal> callForProposals;
-
-
-    //
-
-
-    public Stock() {
+    public Fournisseur() {
     }
 
     public Long getId() {
@@ -41,14 +33,6 @@ public class Stock implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getEmail() {
@@ -75,32 +59,23 @@ public class Stock implements Serializable {
         this.phone = phone;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<AppelOffre> getAppelOffres() {
+        return appelOffres;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
-    public List<CallForProposal> getAppelOffres() {
-        return callForProposals;
-    }
-
-    public void setAppelOffres(List<CallForProposal> callForProposals) {
-        this.callForProposals = callForProposals;
+    public void setAppelOffres(List<AppelOffre> appelOffres) {
+        this.appelOffres = appelOffres;
     }
 
     @Override
     public String toString() {
-        return "Stock{" +
+        return "Fournissour{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
-                ", callForProposals=" + callForProposals +
+                ", appelOffres=" + appelOffres +
                 '}';
     }
 }

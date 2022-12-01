@@ -2,6 +2,8 @@ package com.retro.visionarycrofting.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "Client")
 public class Client implements Serializable {
@@ -14,8 +16,18 @@ public class Client implements Serializable {
     private String password ;
     private String Tel ;
 
+  @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<Command> commands = new ArrayList<>();
 
-    public Client() {};
+  public List<Command> getCommands() {
+    return commands;
+  }
+
+  public void setCommands(List<Command> commands) {
+    this.commands = commands;
+  }
+
+  public Client() {};
 
     public Client(Long id, String userName, String email, String password, String tel) {
         this.id = id;

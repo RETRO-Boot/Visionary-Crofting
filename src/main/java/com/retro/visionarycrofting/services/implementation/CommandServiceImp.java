@@ -1,24 +1,30 @@
 package com.retro.visionarycrofting.services.implementation;
 
+import com.retro.visionarycrofting.entities.Client;
 import com.retro.visionarycrofting.entities.Command;
 import com.retro.visionarycrofting.entities.CommandItem;
+import com.retro.visionarycrofting.entities.Product;
 import com.retro.visionarycrofting.repositories.CommandRepository;
+import com.retro.visionarycrofting.services.ClientService;
 import com.retro.visionarycrofting.services.CommandItemService;
 import com.retro.visionarycrofting.services.CommandService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class CommandServiceImp implements CommandService {
 
     private final CommandRepository commandRepository ;
     private final CommandItemService commandItemService;
+    private final ClientService clientService;
 
-    public CommandServiceImp(CommandRepository commandRepository, CommandItemService commandItemService) {
+    public CommandServiceImp(CommandRepository commandRepository, CommandItemService commandItemService, ClientService clientService) {
         this.commandRepository = commandRepository;
         this.commandItemService = commandItemService;
+        this.clientService = clientService;
     }
 
 
@@ -37,6 +43,12 @@ public class CommandServiceImp implements CommandService {
         command.getCommandItems()) {
         commandItemService.checkQuantity(commandItem, commandItem.getQuantite());
       }
+      // who is the client?
+      Optional<Client> client = clientService.findById(command.getClient().getId());
+
+      command.setClient(client.orElseThrow(IllegalStateException::new));
+
+
       // save command,
       commandRepository.save(command);
       // save command items to db
@@ -45,6 +57,8 @@ public class CommandServiceImp implements CommandService {
         commandItem.setCommand(command);
         commandItemService.addNew(commandItem);
       }
+
+
 
       // return the final command
       return command;

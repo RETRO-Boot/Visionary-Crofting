@@ -31,15 +31,24 @@ public class CallForProposalServiceImp implements CallForProposalService {
     @Override
     public List<CallForProposal> findAllByProductRef(String ref){return callForProposalRepository.findAllByRefProduct(ref);}
     @Override
-    public List<CallForProposal> findAllByStatus(String status){return callForProposalRepository.findAllByStatus(status);}
+    public List<CallForProposal> findAllByStatus(String status){
+        if (verifyEnumStatus(status)){
+            return callForProposalRepository.findAllByStatus(CallForProposalStatus.valueOf(status));
+        }
+        throw new IllegalStateException("Status not valid");
+    }
     @Override
     public CallForProposal findByRef(String ref){return callForProposalRepository.findByRef(ref);}
     @Override
     public CallForProposal addNewCallForProposal(CallForProposal callForProposal){
-        Stock stockToSet = stockService.findById(callForProposal.getStock().getId());
-        CallForProposal callForProposalToSave = new CallForProposal(callForProposal.getRefProduct(), callForProposal.getQuantity(), stockToSet);
-        callForProposalToSave.setStatus(CallForProposalStatus.Open);
-        return callForProposalRepository.save(callForProposalToSave);
+
+        if(callForProposal.getRefProduct()!=null && callForProposal.getQuantity()>0 && callForProposal.getStock().getId()!=null){
+            Stock stockToSet = stockService.findById(callForProposal.getStock().getId());
+            CallForProposal callForProposalToSave = new CallForProposal(callForProposal.getRefProduct(), callForProposal.getQuantity(), stockToSet);
+            callForProposalToSave.setStatus(CallForProposalStatus.Open);
+            return callForProposalRepository.save(callForProposalToSave);
+        }
+        throw new IllegalStateException("Inputs not valides");
     }
     @Override
     public void deleteCallForProposal(String ref){
@@ -50,20 +59,24 @@ public class CallForProposalServiceImp implements CallForProposalService {
     }
     @Override
     @Transactional
-    public void updateCallForProposal(CallForProposal callForProposal, boolean stock){
+    public String updateCallForProposal(CallForProposal callForProposal, boolean stock){
         CallForProposal callForProposalToUpdate = callForProposalRepository.findById(callForProposal.getId()).
                 orElseThrow(() -> new IllegalStateException("Call for proposal with id: " + callForProposal.getId() + " doesn't exist"));
         if (stock){
-            if (callForProposal.getRefProduct()!=null && callForProposal.getRefProduct().length()>0 && !callForProposal.getRefProduct().equals(callForProposalToUpdate.getRefProduct())){
-                callForProposalToUpdate.setProduct(callForProposal.getRefProduct());
-            }else throw new IllegalStateException("This reference is already exist");
+            if (callForProposal.getRefProduct()!=null){
+                if(callForProposal.getRefProduct().length()>0 && !callForProposal.getRefProduct().equals(callForProposalToUpdate.getRefProduct())){
+                    callForProposalToUpdate.setProduct(callForProposal.getRefProduct());
+                }else return "This reference is already exist";
+            }
 
             if(callForProposal.getQuantity() != null && callForProposal.getQuantity() > 0){
                 callForProposalToUpdate.setQuantity(callForProposal.getQuantity());
             }
-            if(callForProposal.getStatus() != null && callForProposal.getStatus().equals(CallForProposalStatus.Close)){
-                callForProposalToUpdate.setStatus(CallForProposalStatus.Close);
-            }else throw new IllegalStateException("Status not valid");
+            if(callForProposal.getStatus() != null){
+                if(callForProposal.getStatus().equals(CallForProposalStatus.Close)){
+                    callForProposalToUpdate.setStatus(CallForProposalStatus.Close);
+                }else return "Status not valid";
+            }
         }
         else {
             if(callForProposal.getFournisseur() !=null){
@@ -71,10 +84,12 @@ public class CallForProposalServiceImp implements CallForProposalService {
                     if(callForProposal.getStatus() != null && callForProposal.getStatus().equals(CallForProposalStatus.Confirmed)){
                         callForProposalToUpdate.setFournisseur(callForProposal.getFournisseur());
                         callForProposalToUpdate.setStatus(CallForProposalStatus.Confirmed);
-                    } throw new IllegalStateException("Status not valid ");
-                }else throw new IllegalStateException("This call is alrady confirmed");
+                    } return "Status not valid ";
+                }else return "This call is alrady confirmed";
             }
         }
+
+        return "Updates done";
     }
 
     public static boolean verifyEnumStatus(String str) {

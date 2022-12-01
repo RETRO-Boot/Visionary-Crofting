@@ -54,5 +54,14 @@ public class CallForProposalResource {
         return callForProposalService.addNewCallForProposal(callForProposal);
     }
 
+    @PutMapping("/update")
+    public String updateCallForProposal(@RequestBody CallForProposal callForProposal, @RequestParam(value = "stock", defaultValue = "false") boolean stock){
+        return callForProposalService.updateCallForProposal(callForProposal, stock);
+    }
+
+    @DeleteMapping
+    public void deleteCallForProposal(@RequestParam(value = "ref", defaultValue = "false")String ref){
+         callForProposalService.deleteCallForProposal(ref);
+    }
 
 }

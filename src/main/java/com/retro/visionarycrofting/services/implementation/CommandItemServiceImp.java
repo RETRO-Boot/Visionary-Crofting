@@ -85,7 +85,7 @@ public class CommandItemServiceImp implements CommandItemService {
     }
   }
 
-  // can be moved to the model  
+  // can be moved to the model
   @Override
   public void checkQuantity(CommandItem commandItem, int quantity) {
     if (commandItem.getQuantite() < quantity){

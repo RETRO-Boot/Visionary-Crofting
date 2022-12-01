@@ -46,6 +46,8 @@ public class CommandServiceImp implements CommandService {
         commandItemService.addNew(commandItem);
       }
 
+
+
       // return the final command
       return command;
     }

@@ -31,7 +31,12 @@ public class CallForProposalServiceImp implements CallForProposalService {
     @Override
     public List<CallForProposal> findAllByProductRef(String ref){return callForProposalRepository.findAllByRefProduct(ref);}
     @Override
-    public List<CallForProposal> findAllByStatus(String status){return callForProposalRepository.findAllByStatus(status);}
+    public List<CallForProposal> findAllByStatus(String status){
+        if (verifyEnumStatus(status)){
+            return callForProposalRepository.findAllByStatus(CallForProposalStatus.valueOf(status));
+        }
+        throw new IllegalStateException("Status not valid");
+    }
     @Override
     public CallForProposal findByRef(String ref){return callForProposalRepository.findByRef(ref);}
     @Override

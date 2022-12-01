@@ -26,5 +26,5 @@ public interface CallForProposalService {
     void deleteCallForProposal(String ref);
 
     @Transactional
-    void updateCallForProposal(CallForProposal callForProposal, boolean stock);
+    String updateCallForProposal(CallForProposal callForProposal, boolean stock);
 }

@@ -21,4 +21,6 @@ public interface StockService {
 
     public Stock save(Stock s);
     public Stock update(Stock stock);
+
+    Stock findById(Long id);
 }

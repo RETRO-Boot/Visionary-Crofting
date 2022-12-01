@@ -49,7 +49,7 @@ public class CallForProposalResource {
         return callForProposalService.findByRef(ref);
     }
 
-    @PostMapping("/stock")
+    @PostMapping("/create-c-f-p")
     public CallForProposal addNewCallForProposal(@RequestBody CallForProposal callForProposal) {
         return callForProposalService.addNewCallForProposal(callForProposal);
     }

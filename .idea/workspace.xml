@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bea30bbe-58f8-4c42-a47b-e8d8b73623c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/entities/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/services/implementation/CommandServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/retro/visionarycrofting/services/implementation/CommandServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="bea30bbe-58f8-4c42-a47b-e8d8b73623c5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +133,7 @@
       <workItem from="1669794798381" duration="2409000" />
       <workItem from="1669797722169" duration="17850000" />
       <workItem from="1669835034413" duration="633000" />
-      <workItem from="1669880087422" duration="4349000" />
+      <workItem from="1669880087422" duration="4680000" />
     </task>
     <servers />
   </component>

@@ -1,28 +1,27 @@
 package com.retro.visionarycrofting.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.retro.visionarycrofting.enumeration.CallForProposalStatus;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "appelOffre")
+@Entity
 public class CallForProposal implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String ref;
     private String refProduct;
     private Integer quantity;
     private CallForProposalStatus status;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Stock stock;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Fournisseur fournisseur;
-
-    //
-
-
     public CallForProposal(String refProduct, int quantity, Stock stock) {
         this.refProduct = refProduct;
         this.quantity = quantity;
@@ -68,8 +67,8 @@ public class CallForProposal implements Serializable {
         return refProduct;
     }
 
-    public void setProduct(String product) {
-        this.refProduct = product;
+    public void setProduct(String refProduct) {
+        this.refProduct = refProduct;
     }
 
     public Stock getStock() {
@@ -93,10 +92,11 @@ public class CallForProposal implements Serializable {
         return "CallForProposal{" +
                 "id=" + id +
                 ", ref='" + ref + '\'' +
-                ", status=" + status +
+                ", refProduct='" + refProduct + '\'' +
                 ", quantity=" + quantity +
-                ", product=" + refProduct +
+                ", status=" + status +
                 ", stock=" + stock +
+                ", fournisseur=" + fournisseur +
                 '}';
     }
 }

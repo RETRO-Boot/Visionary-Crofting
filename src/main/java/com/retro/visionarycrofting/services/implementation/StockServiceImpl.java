@@ -64,4 +64,9 @@ public class StockServiceImpl implements StockService {
         if (this.getOne(stock.getId()) == null) return null;
         return stockDao.save(stock);
     }
+
+    @Override
+    public Stock findById(Long id) {
+        return stockDao.findById(id).get();
+    }
 }

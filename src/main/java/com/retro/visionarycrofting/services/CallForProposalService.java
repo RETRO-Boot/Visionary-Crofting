@@ -21,7 +21,7 @@ public interface CallForProposalService {
 
     CallForProposal findByRef(String ref);
 
-    CallForProposal addNewCallForProposal(String productReference, int quantity, Long stock);
+    CallForProposal addNewCallForProposal(CallForProposal callForProposal);
 
     void deleteCallForProposal(String ref);
 

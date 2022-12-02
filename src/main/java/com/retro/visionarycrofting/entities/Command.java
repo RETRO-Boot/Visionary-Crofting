@@ -25,6 +25,20 @@ public class Command implements Serializable {
   private List<CommandItem> commandItems = new ArrayList<>();
 
 
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "client_id")
+  private Client client;
+
+  @JsonIgnore
+  public Client getClient() {
+    return client;
+  }
+
+  public void setClient(Client client) {
+    this.client = client;
+  }
+
+
   public List<CommandItem> getCommandItems() {
     return commandItems;
   }

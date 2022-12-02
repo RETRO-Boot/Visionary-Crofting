@@ -1,6 +1,7 @@
 package com.retro.visionarycrofting.services.implementation;
 
 import com.retro.visionarycrofting.entities.CallForProposal;
+import com.retro.visionarycrofting.entities.Fournisseur;
 import com.retro.visionarycrofting.entities.Stock;
 import com.retro.visionarycrofting.enumeration.CallForProposalStatus;
 import com.retro.visionarycrofting.repositories.CallForProposalRepository;
@@ -25,7 +26,13 @@ public class CallForProposalServiceImp implements CallForProposalService {
     @Override
     public List<CallForProposal> findAllCallForProposal() {return callForProposalRepository.findAll();}
     @Override
-    public List<CallForProposal> findAllByFournisseurName(String name){return callForProposalRepository.findAllByFournisseurName(name);}
+    public List<CallForProposal> findAllByFournisseurName(String name){
+        List<CallForProposal> callForProposal = callForProposalRepository.findAllByFournisseurName(name);
+        if(callForProposal != null){
+            return callForProposal;
+        }
+        throw new IllegalStateException("There is no Confirmed call for proposal for the provider with name"+name);
+    }
     @Override
     public List<CallForProposal> findAllByStockId(Long id){return callForProposalRepository.findAllByStockId(id);}
     @Override
@@ -45,7 +52,7 @@ public class CallForProposalServiceImp implements CallForProposalService {
         if(callForProposal.getRefProduct()!=null && callForProposal.getQuantity()>0 && callForProposal.getStock().getId()!=null){
             Stock stockToSet = stockService.findById(callForProposal.getStock().getId());
             CallForProposal callForProposalToSave = new CallForProposal(callForProposal.getRefProduct(), callForProposal.getQuantity(), stockToSet);
-            callForProposalToSave.setStatus(CallForProposalStatus.Open);
+            callForProposalToSave.setStatus(CallForProposalStatus.open);
             return callForProposalRepository.save(callForProposalToSave);
         }
         throw new IllegalStateException("Inputs not valides");
@@ -59,7 +66,7 @@ public class CallForProposalServiceImp implements CallForProposalService {
     }
     @Override
     @Transactional
-    public String updateCallForProposal(CallForProposal callForProposal, boolean stock){
+    public Object updateCallForProposal(CallForProposal callForProposal, boolean stock){
         CallForProposal callForProposalToUpdate = callForProposalRepository.findById(callForProposal.getId()).
                 orElseThrow(() -> new IllegalStateException("Call for proposal with id: " + callForProposal.getId() + " doesn't exist"));
         if (stock){
@@ -72,18 +79,20 @@ public class CallForProposalServiceImp implements CallForProposalService {
             if(callForProposal.getQuantity() != null && callForProposal.getQuantity() > 0){
                 callForProposalToUpdate.setQuantity(callForProposal.getQuantity());
             }
+
             if(callForProposal.getStatus() != null){
-                if(callForProposal.getStatus().equals(CallForProposalStatus.Close)){
-                    callForProposalToUpdate.setStatus(CallForProposalStatus.Close);
+                if(callForProposal.getStatus().equals(CallForProposalStatus.close)){
+                    callForProposalToUpdate.setStatus(CallForProposalStatus.close);
                 }else return "Status not valid";
             }
         }
         else {
             if(callForProposal.getFournisseur() !=null){
-                if(callForProposalToUpdate.getStatus() != CallForProposalStatus.Confirmed){
-                    if(callForProposal.getStatus() != null && callForProposal.getStatus().equals(CallForProposalStatus.Confirmed)){
+                if(callForProposalToUpdate.getStatus() != CallForProposalStatus.confirmed){
+                    if(callForProposal.getStatus() != null && callForProposal.getStatus().equals(CallForProposalStatus.confirmed)){
                         callForProposalToUpdate.setFournisseur(callForProposal.getFournisseur());
-                        callForProposalToUpdate.setStatus(CallForProposalStatus.Confirmed);
+                        callForProposalToUpdate.setStatus(CallForProposalStatus.confirmed);
+                        return callForProposalToUpdate;
                     } return "Status not valid ";
                 }else return "This call is alrady confirmed";
             }

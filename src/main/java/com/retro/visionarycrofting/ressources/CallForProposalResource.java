@@ -39,9 +39,10 @@ public class CallForProposalResource {
         return callForProposalService.findAllByProductRef(productRef);
     }
 
-    @GetMapping("/status")
-    public List<CallForProposal> findAllByStatus(@RequestParam(value = "status", defaultValue = "null") String status) {
-        return callForProposalService.findAllByStatus(status);
+    @GetMapping("/status/{status}")
+    public List<CallForProposal> findAllByStatus(@PathVariable String status) {
+        String statusLower = status.toLowerCase();
+        return callForProposalService.findAllByStatus(statusLower);
     }
 
     @GetMapping("/ref")
@@ -55,7 +56,7 @@ public class CallForProposalResource {
     }
 
     @PutMapping("/update")
-    public String updateCallForProposal(@RequestBody CallForProposal callForProposal, @RequestParam(value = "stock", defaultValue = "false") boolean stock){
+    public Object updateCallForProposal(@RequestBody CallForProposal callForProposal, @RequestParam(value = "stock", defaultValue = "false") boolean stock){
         return callForProposalService.updateCallForProposal(callForProposal, stock);
     }
 
